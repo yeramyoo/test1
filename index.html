@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="교실 좌석 이용 관리 앱">
+  <title>교실 좌석 이용 관리</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero"><p class="eyebrow">CLASSROOM SEAT MANAGER</p><h1>교실 좌석 이용 관리</h1><p class="hero-copy">좌석의 상태 변화와 이용 시간 계산 규칙을 이해하고 AI에게 정확히 설명해 작동하는 웹 앱을 완성합니다.</p></header>
+    <section class="summary-card" aria-labelledby="summary-title"><div class="section-heading"><div><p class="section-kicker">TODAY'S STATUS</p><h2 id="summary-title">좌석 현황 요약</h2></div><button id="resetButton" class="reset-button" type="button">처음 상태로</button></div><div id="summaryGrid" class="summary-grid" aria-live="polite"></div></section>
+    <section class="seat-section" aria-labelledby="seat-title">
+      <div class="section-heading seat-heading"><div><p class="section-kicker">SEAT MAP</p><h2 id="seat-title">좌석</h2></div><p class="rule-note">30분 단위로 시간을 추가할 수 있어요</p></div>
+      <div class="seat-tools"><label class="search-box"><span class="sr-only">좌석 번호 또는 이용자 이름 검색</span><input id="searchInput" type="search" placeholder="좌석 번호 또는 이용자 이름 검색" autocomplete="off"><span aria-hidden="true">⌕</span></label><div id="filterGroup" class="filter-group" role="group" aria-label="좌석 상태 필터"><button class="filter-button selected" type="button" data-filter="all">전체</button><button class="filter-button" type="button" data-filter="empty">빈 좌석</button><button class="filter-button" type="button" data-filter="active">사용 중</button><button class="filter-button" type="button" data-filter="rest">휴식 필요</button></div><label class="sort-box"><span>정렬</span><select id="sortSelect"><option value="seat">좌석 번호 순</option><option value="time">이용시간 긴 순</option></select></label></div>
+      <p id="resultMessage" class="result-message" aria-live="polite"></p><div id="seatGrid" class="seat-grid"></div>
+    </section>
+    <p id="activityMessage" class="activity-message" aria-live="polite">이용할 좌석의 ‘이용하기’ 버튼을 눌러 주세요.</p>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
